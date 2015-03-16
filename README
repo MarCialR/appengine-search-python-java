@@ -14,5 +14,5 @@ B) JAVA: used to insert 200 docs of 3800 chars in "shared_index"
 	3) deploy java search with: mvn gcloud:deploy from within java-search
 
 	4) two ways to do search:
-		4.1) java-search.<YOUR-PROJECT>.appspot.com/user
+		4.1) java-search.<YOUR-PROJECT>.appspot.com/user trying to mimic user's code
 		4.2) java-search.<YOUR-PROJECT>.appspot.com/asbadaspossible to try to make it as slow as reported

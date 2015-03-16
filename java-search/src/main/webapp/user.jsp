@@ -66,12 +66,12 @@
   <body>
     <div>
       <div style='font-size: x-large; float: left;'>
-        Text Search Demo
+        Text Search (Like User code)
       </div>
-      <div style='float: right;'>
+      <!--div style='float: right;'>
         <%=request.getAttribute("nickname")%> &bull;
         <a href='<%=request.getAttribute("authUrl")%>'><%=request.getAttribute("authAction")%></a>
-      </div>
+      </div-->
     </div>
     <div style='clear: both; font-style: italic; margin-bottom: 1ex;'><%=outcome%></div>
     <form name="search" action="/user" method="get">
@@ -85,7 +85,7 @@
         <option <%="50".equals(limit)? "selected" : ""%>>50</option>
       </select>
     </form>
-    <hr/>
+    <!--hr/>
     <form name="index" acton="/search" method="get">
       <b>Document</b>:
       <br/>
@@ -99,9 +99,9 @@
         name="tags" type="text" value=""/>
       <br />
       <input name="index" type="submit" value="Add" style="width: 500px;"/>
-      <!-- repeated so that we can execute a search after indexing -->
+      <!-- repeated so that we can execute a search after indexing >
       <input type="hidden" name="query" value="<%=query%>"/>
-    </form>
+    </form-->
     <hr/>
     <%
       List<Document> found = (List<Document>) request.getAttribute("found");
