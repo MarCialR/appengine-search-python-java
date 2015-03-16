@@ -4,7 +4,7 @@
 
     <servlet>
         <servlet-name>user</servlet-name>
-        <servlet-class>com.google.appengine.demos.search.USer</servlet-class>
+        <servlet-class>com.google.appengine.demos.search.User</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>user</servlet-name>

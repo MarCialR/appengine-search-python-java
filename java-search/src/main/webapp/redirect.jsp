@@ -1,3 +1,3 @@
 <%
-  request.getRequestDispatcher("/original").forward(request, response);
+  request.getRequestDispatcher("/user").forward(request, response);
 %>

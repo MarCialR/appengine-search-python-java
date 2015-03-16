@@ -43,7 +43,7 @@ public class AsBadAsPossible extends HttpServlet {
 			outcome = searchOutcome;
 		}
 		req.setAttribute("outcome", outcome);
-		req.getRequestDispatcher("reproducing.jsp").forward(req, resp);
+		req.getRequestDispatcher("asbadaspossible.jsp").forward(req, resp);
 	}
 
 	/**
