@@ -1,0 +1,18 @@
+given <YOUR-PROJECT>
+
+A)PYTHON: used to insert 200 docs of 3800 chars in "shared_index"
+
+	1) deploy python python-docs-insertion
+	2) visit python-docs-insertion.<YOUR-PROJECT>.appspot.com/search/insert to insert 
+		2.1) you can delete all docs with python-docs-insertion.<YOUR-PROJECT>.appspot.com/search/clear
+
+B) JAVA: used to insert 200 docs of 3800 chars in "shared_index"
+	
+	1) java-search/pom.xml  :  set <my.cloud.sdk.folder> 
+	2) java-search/src/main/webapp/WEB-INF/appengine-web.xml : set <application>
+
+	3) deploy java search with: mvn gcloud:deploy from within java-search
+
+	4) two ways to do search:
+		4.1) java-search.<YOUR-PROJECT>.appspot.com/user
+		4.2) java-search.<YOUR-PROJECT>.appspot.com/asbadaspossible to try to make it as slow as reported
