@@ -3,26 +3,8 @@ from google.appengine.api import search
 from html_templates import templates
 
 from misc.arabian_nights import full_text
-
-
-class InsertArabianNights(webapp2.RequestHandler):
-
-    def get(self):
-        from helpers import insert_arabian_nights
-        insert_arabian_nights()
-
-        html = templates.BASE % ("200 docs x 3800chars   INSERTED!!")
-        return webapp2.Response(body=html, status=200)
-
-
-class ClearArabianNights(webapp2.RequestHandler):
-
-    def get(self):
-        from helpers import clean_shared_index
-        clean_shared_index()
-
-        html = templates.BASE % ("DONE Clearing!!")
-        return webapp2.Response(body=html, status=200)
+import logging
+from datetime import datetime
 
 
 
@@ -62,3 +44,22 @@ def insert_arabian_nights():
         logging.info('.... %d: OK!!'  %init)
     except search.Error:
         logging.exception('insert_arabian_nights failed')
+
+
+
+class InsertArabianNights(webapp2.RequestHandler):
+
+    def get(self):
+        insert_arabian_nights()
+
+        html = templates.BASE % ("200 docs x 3800chars   INSERTED!!")
+        return webapp2.Response(body=html, status=200)
+
+
+class ClearArabianNights(webapp2.RequestHandler):
+
+    def get(self):
+        clean_shared_index()
+
+        html = templates.BASE % ("DONE Clearing!!")
+        return webapp2.Response(body=html, status=200)
