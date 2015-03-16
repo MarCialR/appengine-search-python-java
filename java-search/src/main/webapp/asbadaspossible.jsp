@@ -74,7 +74,7 @@
       </div>
     </div>
     <div style='clear: both; font-style: italic; margin-bottom: 1ex;'><%=outcome%></div>
-    <form name="search" action="/nights" method="get">
+    <form name="search" action="/asbadaspossible" method="get">
       <input placeholder="Search" style="width:500px;"
         type="search" name="query" id="query" value='<%=query%>'/>
       <select name="limit">
