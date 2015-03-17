@@ -1,5 +1,10 @@
 given YOUR-PROJECT
 
+I recommend creating a new project to do this tests. You may use your existing one given you do not have:
+	a) any version named python-docs-insertion
+	b) any version named java-search
+	c) any index named 1001_Nights
+
 I have used two versions:
 
 A) PYTHON: only to insert 200 docs of 3800 chars in Index "1001_Nights"
