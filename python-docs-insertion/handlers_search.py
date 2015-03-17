@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 
-SHARED_INDEX = 'shared_index'
+SHARED_INDEX = '1001_Nights'
 
 def clean_shared_index():
   doc_index = search.Index(name=SHARED_INDEX)

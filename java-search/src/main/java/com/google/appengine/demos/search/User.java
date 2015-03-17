@@ -30,7 +30,7 @@ public class User extends HttpServlet {
 	private SearchService searchService = SearchServiceFactory.getSearchService();
 	private IndexSpec.Builder searchBuilder = IndexSpec.newBuilder();
 
-	private static final Logger LOG = Logger.getLogger(User.class
+	private static final Logger LOGGER = Logger.getLogger(User.class
 			.getName());
 
 	@Override
@@ -52,39 +52,72 @@ public class User extends HttpServlet {
 	 */
 
 	private String search(HttpServletRequest req) {
-		String queryStr = req.getParameter("query");
-		if (queryStr == null) {
-			queryStr = "";
+		String email = "1001_Nights";
+		
+		String queryString = req.getParameter("query");
+		if (queryString == null) {
+			queryString = "";
 		}
 
-		List<Document> found = new ArrayList<Document>();
+		List<Document> found = new ArrayList<Document>();		
 		String outcome = null;
-		try {
-			String email = "shared_index";
-			String queryString = queryStr;
-			searchService = SearchServiceFactory.getSearchService();
-			searchBuilder = IndexSpec.newBuilder();
+		
+		
+		
+//-------------------------------------------------------------------------------------		
+		//StringBuffer sbuf = new StringBuffer();
+/*		List<SearchResults> searchResults = new ArrayList<SearchResults>();*/
 
+		try 
+		{
+			LOGGER.severe("BEFORE IndexSpec.newBuilder().setName(email).build");
+			
+			//Results<ScoredDocument> results = getIndex(email).search(queryString);
 			IndexSpec indexSpec = searchBuilder.setName(email).build();
-			LOG.severe("AFTER IndexSpec.newBuilder().setName(email).build");
-
+			LOGGER.severe("AFTER IndexSpec.newBuilder().setName(email).build");
+			
 			Index index = searchService.getIndex(indexSpec);
-
-			LOG.severe("AFTER SearchServiceFactory.getSearchService().getIndex(indexSpec)");
+			
+			LOGGER.severe("AFTER SearchServiceFactory.getSearchService().getIndex(indexSpec)");
 
 			Results<ScoredDocument> results = index.search(queryString);
+			
+			LOGGER.severe("AFTER index.search(queryString)");
 
-			LOG.severe("AFTER index.search(queryString)");
+/*	
+			// Iterate over the documents in the results
+			for (ScoredDocument document : results) 
+			{
+				// handle results
+				//sbuf.append(document.getOnlyField("body").getText());
+				SearchResults result = new SearchResults(document);
+				searchResults.add(result);
+			}
+			
+			LOGGER.severe("After fetching the results");
+		} 
+		catch (Exception e) {
+			LOGGER.severe("SearchUtil.searchDocuments - " +e.getMessage());
+			//if (StatusCode.TRANSIENT_ERROR.equals(e.getOperationResult().getCode())) {
+				//LOGGER.severe("SearchUtil.searchDocuments - " +e.getMessage());
+			//}
+		}
+
+		return searchResults;
+*/		
+//-------------------------------------------------------------------------------------		
 
 			Utils.processFound(found, results);
 
 		} catch (RuntimeException e) {
-			LOG.log(Level.SEVERE,
-					"Search with query '" + queryStr + "' failed", e);
+			LOGGER.log(Level.SEVERE,
+					"Search with query '" + queryString + "' failed", e);
 			outcome = "Search failed due to an error: " + e.getMessage();
 		}
 		req.setAttribute("found", found);
 		return outcome;
+
+
 	}
 
 }

@@ -27,7 +27,7 @@ import com.google.appengine.api.search.SearchServiceFactory;
 public class AsBadAsPossible extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private Index INDEX;
+	
 
 
 
@@ -73,11 +73,11 @@ public class AsBadAsPossible extends HttpServlet {
 			
 			// call to .build() makes no difference
 			// INDEX = SearchServiceFactory.getSearchService()
-			// .getIndex(IndexSpec.newBuilder().setName("shared_index").build());
-			INDEX = searchService.getIndex(searchBuilder.setName("shared_index").build());
+			// .getIndex(IndexSpec.newBuilder().setName("1001_Nights").build());
+			Index index = searchService.getIndex(searchBuilder.setName("1001_Nights").build());
 
 			LOG.severe("Fresh index instance BEFORE INDEX.search(query)");
-			Results<ScoredDocument> results = INDEX.search(query);
+			Results<ScoredDocument> results = index.search(query);
 			LOG.severe("Fresh index instance AFTER INDEX.search(query)");
 
 			Utils.processFound(found, results);

@@ -12,7 +12,7 @@
         <appengine.app.version>1</appengine.app.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <appengine.target.version>1.9.17a</appengine.target.version>   
-        <my.cloud.sdk.folder>/home/marcial/google-cloud-sdk</my.cloud.sdk.folder>
+        <my.cloud.sdk.folder>/home/mroman/cloud/google-cloud-sdk</my.cloud.sdk.folder>
 
     </properties>
 
