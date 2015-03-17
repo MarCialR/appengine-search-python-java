@@ -77,13 +77,13 @@
     <form name="search" action="/asbadaspossible" method="get">
       <input placeholder="Search" style="width:500px;"
         type="search" name="query" id="query" value='<%=query%>'/>
-      <select name="limit">
+      <!--select name="limit">
         <option <%="5".equals(limit)? "selected" : ""%>>5</option>
         <option <%="10".equals(limit)? "selected" : ""%>>10</option>
         <option <%="15".equals(limit)? "selected" : ""%>>15</option>
         <option <%="20".equals(limit)? "selected" : ""%>>20</option>
         <option <%="50".equals(limit)? "selected" : ""%>>50</option>
-      </select>
+      </select-->
     </form>
     <!--hr/>
     <form name="index" acton="/search" method="get">
