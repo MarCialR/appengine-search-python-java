@@ -19,7 +19,23 @@
         <servlet-name>asbadaspossible</servlet-name>
         <url-pattern>/asbadaspossible</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>createindex</servlet-name>
+        <servlet-class>com.google.appengine.demos.search.CreateIndexes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createindex</servlet-name>
+        <url-pattern>/createindex</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteindex</servlet-name>
+        <servlet-class>com.google.appengine.demos.search.DeleteIndexes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteindex</servlet-name>
+        <url-pattern>/deleteindex</url-pattern>
+    </servlet-mapping>        
 
     <welcome-file-list>
       <welcome-file>redirect.jsp</welcome-file>
